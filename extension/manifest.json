@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "Price Compass--2",
+    "version": "2.0",
+    "description": "Compare product prices across different Indian e-commerce sites",
+    "permissions": ["storage", "activeTab", "scripting", "tabs", "webNavigation"],
+
+
+ 
+    "host_permissions": [
+        "https://www.amazon.in/*",
+        "https://www.flipkart.com/*",
+        "https://www.myntra.com/*",
+        "https://www.snapdeal.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.amazon.in/*",
+                "https://www.flipkart.com/*",
+                "https://www.myntra.com/*",
+                "https://www.snapdeal.com/*"
+            ],
+            "js": ["content.js"]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}

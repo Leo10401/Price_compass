@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Price Tracker</title>
+    <script src="popup.js" defer></script>
+    <style>
+        body { width: 300px; padding: 10px; font-family: Arial, sans-serif; }
+        #status { font-style: italic; color: #666; }
+        button { padding: 8px; margin-top: 10px; cursor: pointer; width: 100%; }
+        input { width: 100%; padding: 8px; margin: 5px 0; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <h2>Price Tracker</h2>
+
+    <!-- Login/Register Section -->
+    <div id="authSection">
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button id="loginButton">Login</button>
+        <button id="registerButton">Register</button>
+        <p id="authMessage"></p>
+    </div>
+
+    <!-- Price Comparison Section (Hidden until logged in) -->
+    <div id="priceSection" class="hidden">
+        <div id="status">Loading...</div>
+        <div id="prices"></div>
+        <button id="saveButton" class="hidden">Save History</button>
+    </div>
+
+    <button id="logoutButton" class="hidden">Logout</button>
+</body>
+</html>
